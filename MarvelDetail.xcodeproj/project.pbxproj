@@ -99,13 +99,10 @@
 		0BDE6E522626C810003076E9 /* MarvelDetail */ = {
 			isa = PBXGroup;
 			children = (
-				0BDE6E532626C810003076E9 /* AppDelegate.swift */,
-				0BDE6E552626C810003076E9 /* SceneDelegate.swift */,
-				0BDE6E572626C810003076E9 /* ViewController.swift */,
-				0BDE6E592626C810003076E9 /* Main.storyboard */,
-				0BDE6E5C2626C811003076E9 /* Assets.xcassets */,
-				0BDE6E5E2626C811003076E9 /* LaunchScreen.storyboard */,
-				0BDE6E612626C811003076E9 /* Info.plist */,
+				0BDE6E862626CCB5003076E9 /* Startup */,
+				0BDE6E902626CDB4003076E9 /* Features */,
+				0BDE6E882626CCFD003076E9 /* Library */,
+				0BDE6E8D2626CD65003076E9 /* Resources */,
 			);
 			path = MarvelDetail;
 			sourceTree = "<group>";
@@ -126,6 +123,97 @@
 				0BDE6E772626C811003076E9 /* Info.plist */,
 			);
 			path = MarvelDetailUITests;
+			sourceTree = "<group>";
+		};
+		0BDE6E862626CCB5003076E9 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E5E2626C811003076E9 /* LaunchScreen.storyboard */,
+				0BDE6E552626C810003076E9 /* SceneDelegate.swift */,
+				0BDE6E532626C810003076E9 /* AppDelegate.swift */,
+			);
+			path = Startup;
+			sourceTree = "<group>";
+		};
+		0BDE6E872626CCD9003076E9 /* MarvelCharacters */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E572626C810003076E9 /* ViewController.swift */,
+				0BDE6E592626C810003076E9 /* Main.storyboard */,
+			);
+			path = MarvelCharacters;
+			sourceTree = "<group>";
+		};
+		0BDE6E882626CCFD003076E9 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E892626CD20003076E9 /* Configuration */,
+				0BDE6E8A2626CD36003076E9 /* Model */,
+				0BDE6E8B2626CD42003076E9 /* Services */,
+				0BDE6E8C2626CD48003076E9 /* Extensions */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		0BDE6E892626CD20003076E9 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		0BDE6E8A2626CD36003076E9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0BDE6E8B2626CD42003076E9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0BDE6E8C2626CD48003076E9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0BDE6E8D2626CD65003076E9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E8E2626CD76003076E9 /* Environments */,
+				0BDE6E8F2626CD8D003076E9 /* plist */,
+				0BDE6E5C2626C811003076E9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0BDE6E8E2626CD76003076E9 /* Environments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Environments;
+			sourceTree = "<group>";
+		};
+		0BDE6E8F2626CD8D003076E9 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E612626C811003076E9 /* Info.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		0BDE6E902626CDB4003076E9 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E872626CCD9003076E9 /* MarvelCharacters */,
+			);
+			path = Features;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
