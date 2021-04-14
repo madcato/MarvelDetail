@@ -23,6 +23,12 @@
 		0BDE6EBD26273973003076E9 /* MarvelDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6EBC26273973003076E9 /* MarvelDto.swift */; };
 		0BDE6EC2262739ED003076E9 /* MarvelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6EC1262739ED003076E9 /* MarvelTableViewCell.swift */; };
 		0BDE6EC726273A76003076E9 /* MarvelDetailDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6EC626273A76003076E9 /* MarvelDetailDto.swift */; };
+		0BDE6ED026274071003076E9 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6ECB26274071003076E9 /* API.swift */; };
+		0BDE6ED226274071003076E9 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6ECD26274071003076E9 /* Http.swift */; };
+		0BDE6ED326274071003076E9 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6ECE26274071003076E9 /* Client.swift */; };
+		0BDE6ED426274071003076E9 /* NetworkingInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6ECF26274071003076E9 /* NetworkingInjector.swift */; };
+		0BDE6EE126274360003076E9 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6EDB262742C0003076E9 /* Configuration.swift */; };
+		0BDE6EE526274363003076E9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6EDC262742C0003076E9 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +71,13 @@
 		0BDE6EBC26273973003076E9 /* MarvelDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDto.swift; sourceTree = "<group>"; };
 		0BDE6EC1262739ED003076E9 /* MarvelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MarvelTableViewCell.swift; path = Cells/MarvelTableViewCell.swift; sourceTree = "<group>"; };
 		0BDE6EC626273A76003076E9 /* MarvelDetailDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDetailDto.swift; sourceTree = "<group>"; };
+		0BDE6ECB26274071003076E9 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0BDE6ECD26274071003076E9 /* Http.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
+		0BDE6ECE26274071003076E9 /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		0BDE6ECF26274071003076E9 /* NetworkingInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingInjector.swift; sourceTree = "<group>"; };
+		0BDE6EDB262742C0003076E9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		0BDE6EDC262742C0003076E9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		0BDE6EDD262742EE003076E9 /* environments.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = environments.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +194,8 @@
 		0BDE6E892626CD20003076E9 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				0BDE6EDB262742C0003076E9 /* Configuration.swift */,
+				0BDE6EDC262742C0003076E9 /* Environment.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -197,6 +212,10 @@
 		0BDE6E8B2626CD42003076E9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0BDE6ECB26274071003076E9 /* API.swift */,
+				0BDE6ECE26274071003076E9 /* Client.swift */,
+				0BDE6ECD26274071003076E9 /* Http.swift */,
+				0BDE6ECF26274071003076E9 /* NetworkingInjector.swift */,
 				0BDE6EB7262738D8003076E9 /* MarvelService.swift */,
 			);
 			path = Services;
@@ -222,6 +241,7 @@
 		0BDE6E8E2626CD76003076E9 /* Environments */ = {
 			isa = PBXGroup;
 			children = (
+				0BDE6EDD262742EE003076E9 /* environments.plist */,
 			);
 			path = Environments;
 			sourceTree = "<group>";
@@ -420,12 +440,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				0BDE6EC2262739ED003076E9 /* MarvelTableViewCell.swift in Sources */,
+				0BDE6ED426274071003076E9 /* NetworkingInjector.swift in Sources */,
 				0BDE6EC726273A76003076E9 /* MarvelDetailDto.swift in Sources */,
+				0BDE6EE526274363003076E9 /* Environment.swift in Sources */,
+				0BDE6ED326274071003076E9 /* Client.swift in Sources */,
 				0BDE6EBD26273973003076E9 /* MarvelDto.swift in Sources */,
+				0BDE6ED226274071003076E9 /* Http.swift in Sources */,
 				0BDE6EB3262736A6003076E9 /* MarvelCharacterDetailVC.swift in Sources */,
+				0BDE6EE126274360003076E9 /* Configuration.swift in Sources */,
 				0BDE6EAB26273677003076E9 /* MarvelCharacterTableVC.swift in Sources */,
 				0BDE6E542626C810003076E9 /* AppDelegate.swift in Sources */,
 				0BDE6EB8262738D8003076E9 /* MarvelService.swift in Sources */,
+				0BDE6ED026274071003076E9 /* API.swift in Sources */,
 				0BDE6E562626C810003076E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

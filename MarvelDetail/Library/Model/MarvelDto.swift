@@ -7,5 +7,5 @@
 
 import Foundation
 
-class MarvelDto: Codable {    
+class MarvelDto: Codable {
 }
