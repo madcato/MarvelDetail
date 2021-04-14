@@ -17,6 +17,7 @@
 		0BDE6E762626C811003076E9 /* MarvelDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6E752626C811003076E9 /* MarvelDetailUITests.swift */; };
 		0BDE6E9C2626F33C003076E9 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDE6E9A2626F33C003076E9 /* Alamofire.xcframework */; };
 		0BDE6E9D2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDE6E9B2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework */; };
+		0BDE6EA52626F6D7003076E9 /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDE6EA42626F6D7003076E9 /* AlamofireImage.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0BDE6E772626C811003076E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BDE6E9A2626F33C003076E9 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = SOURCE_ROOT; };
 		0BDE6E9B2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireNetworkActivityIndicator.xcframework; path = Carthage/Build/AlamofireNetworkActivityIndicator.xcframework; sourceTree = SOURCE_ROOT; };
+		0BDE6EA42626F6D7003076E9 /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDE6EA52626F6D7003076E9 /* AlamofireImage.xcframework in Frameworks */,
 				0BDE6E9D2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework in Frameworks */,
 				0BDE6E9C2626F33C003076E9 /* Alamofire.xcframework in Frameworks */,
 			);
@@ -236,6 +239,7 @@
 			children = (
 				0BDE6E9A2626F33C003076E9 /* Alamofire.xcframework */,
 				0BDE6E9B2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework */,
+				0BDE6EA42626F6D7003076E9 /* AlamofireImage.xcframework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
