@@ -5,14 +5,23 @@
 //  Created by Daniel Vela on 14/4/21.
 //
 
+import AlamofireNetworkActivityIndicator
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    static var shared: AppDelegate {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            return delegate
+        }
+        assert(false)
+        return AppDelegate()
+    }
+
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        enableNetworkIndicator()
         return true
     }
 
@@ -33,5 +42,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+}
 
+// MARK: Network indicator (AlamofireNetworkActivityIndicator)
+
+extension AppDelegate {
+    private func enableNetworkIndicator() {
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        // To show the network indicator only when the response is very slow
+        NetworkActivityIndicatorManager.shared.startDelay = 1.0
+        // To avoid eliminating the indicator to fast
+        NetworkActivityIndicatorManager.shared.completionDelay = 0.2
+    }
 }
