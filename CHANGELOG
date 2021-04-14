@@ -19,3 +19,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - .gitignore from [Github Xcode .gitignore](https://github.com/github/gitignore/blob/master/Global/Xcode.gitignore)
 - This CHANGELOG
 - readme.md
+- Swiftlint

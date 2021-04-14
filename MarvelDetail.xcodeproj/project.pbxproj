@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,8 @@
 		0BDE6E602626C811003076E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BDE6E5E2626C811003076E9 /* LaunchScreen.storyboard */; };
 		0BDE6E6B2626C811003076E9 /* MarvelDetailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6E6A2626C811003076E9 /* MarvelDetailTests.swift */; };
 		0BDE6E762626C811003076E9 /* MarvelDetailUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6E752626C811003076E9 /* MarvelDetailUITests.swift */; };
+		0BDE6E9C2626F33C003076E9 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDE6E9A2626F33C003076E9 /* Alamofire.xcframework */; };
+		0BDE6E9D2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BDE6E9B2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		0BDE6E712626C811003076E9 /* MarvelDetailUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelDetailUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BDE6E752626C811003076E9 /* MarvelDetailUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelDetailUITests.swift; sourceTree = "<group>"; };
 		0BDE6E772626C811003076E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BDE6E9A2626F33C003076E9 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = SOURCE_ROOT; };
+		0BDE6E9B2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireNetworkActivityIndicator.xcframework; path = Carthage/Build/AlamofireNetworkActivityIndicator.xcframework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BDE6E9D2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework in Frameworks */,
+				0BDE6E9C2626F33C003076E9 /* Alamofire.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +88,7 @@
 				0BDE6E522626C810003076E9 /* MarvelDetail */,
 				0BDE6E692626C811003076E9 /* MarvelDetailTests */,
 				0BDE6E742626C811003076E9 /* MarvelDetailUITests */,
+				0BDE6E992626F320003076E9 /* Frameworks */,
 				0BDE6E512626C810003076E9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -103,6 +110,7 @@
 				0BDE6E902626CDB4003076E9 /* Features */,
 				0BDE6E882626CCFD003076E9 /* Library */,
 				0BDE6E8D2626CD65003076E9 /* Resources */,
+				0BDE6E982626EBF7003076E9 /* Supporting Files */,
 			);
 			path = MarvelDetail;
 			sourceTree = "<group>";
@@ -203,7 +211,6 @@
 		0BDE6E8F2626CD8D003076E9 /* plist */ = {
 			isa = PBXGroup;
 			children = (
-				0BDE6E612626C811003076E9 /* Info.plist */,
 			);
 			path = plist;
 			sourceTree = "<group>";
@@ -216,6 +223,23 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		0BDE6E982626EBF7003076E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E612626C811003076E9 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0BDE6E992626F320003076E9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0BDE6E9A2626F33C003076E9 /* Alamofire.xcframework */,
+				0BDE6E9B2626F33C003076E9 /* AlamofireNetworkActivityIndicator.xcframework */,
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -223,6 +247,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BDE6E7A2626C811003076E9 /* Build configuration list for PBXNativeTarget "MarvelDetail" */;
 			buildPhases = (
+				0BDE6E942626EB46003076E9 /* Swiftlint */,
 				0BDE6E4C2626C810003076E9 /* Sources */,
 				0BDE6E4D2626C810003076E9 /* Frameworks */,
 				0BDE6E4E2626C810003076E9 /* Resources */,
@@ -340,6 +365,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BDE6E942626EB46003076E9 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint lint --config .swiftlint.yml\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0BDE6E4C2626C810003076E9 /* Sources */ = {
@@ -526,7 +572,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TW65EXAM4U;
-				INFOPLIST_FILE = MarvelDetail/Info.plist;
+				INFOPLIST_FILE = "MarvelDetail/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -545,7 +591,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TW65EXAM4U;
-				INFOPLIST_FILE = MarvelDetail/Info.plist;
+				INFOPLIST_FILE = "MarvelDetail/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
