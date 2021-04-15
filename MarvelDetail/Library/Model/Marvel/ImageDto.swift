@@ -14,6 +14,7 @@ struct ImageDto: Decodable {
     }
 
     let url: URL
+    let urlString: String
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: ImageKeys.self)
@@ -21,7 +22,8 @@ struct ImageDto: Decodable {
         let path = try container.decode(String.self, forKey: .path)
         let fileExtension = try container.decode(String.self, forKey: .fileExtension)
 
-        guard let url = URL(string: "\(path).\(fileExtension)") else {
+        self.urlString = "\(path).\(fileExtension)"
+        guard let url = URL(string: self.urlString) else {
             fatalError("Invalid Marvel image format in json")
         }
 

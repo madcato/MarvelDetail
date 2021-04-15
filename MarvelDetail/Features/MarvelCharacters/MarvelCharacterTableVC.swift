@@ -9,37 +9,48 @@ import UIKit
 
 class MarvelCharacterTableVC: UITableViewController {
 
+    private var service = MarvelService()
+    private var data: [Marvel.CharacterDto] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        service.listCharacters { result in
+            switch result {
+            case let .success(characters):
+                self.data = characters
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            case let .failure(error):
+                // TODO: show an error alert
+                print("\(error.localizedDescription)")
+            }
+        }
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return data.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MarvelTableViewCell.kCellId,
+                                                       for: indexPath) as? MarvelTableViewCell else {
+            fatalError("Invalid MarvelTableViewCell.kCellId. Is the cell defined in the table?")
+        }
+        guard let character = data.item(at: indexPath.row) else {
+            fatalError("Invalid index data for table data")
+        }
 
-        // Configure the cell...
+        cell.setCharacter(character)
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
