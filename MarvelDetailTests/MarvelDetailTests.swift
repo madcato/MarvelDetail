@@ -10,24 +10,38 @@ import XCTest
 
 class MarvelDetailTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testListCharacters() {
+        let expectation = XCTestExpectation(description: "MarvelService")
+        var character_list_result: [Marvel.CharacterDto]?
+        MarvelService().listCharacters { result in
+            switch result {
+            case let .success(response):
+                XCTAssertGreaterThan(response.count, 0)
+                character_list_result = response
+                expectation.fulfill()
+            case let .failure(error):
+                print("\(error.localizedDescription)")
+            }
         }
+        wait(for: [expectation], timeout: 10.0)
+        XCTAssertNotNil(character_list_result)
+    }
+
+    func testCharacter() {
+        let id = 1011334
+        let expectation = XCTestExpectation(description: "MarvelService")
+        var character: Marvel.CharacterDto?
+        MarvelService().characterDetail(of: id) { result in
+            switch result {
+            case let .success(response):
+                character = response
+                expectation.fulfill()
+            case let .failure(error):
+                print("\(error.localizedDescription)")
+            }
+        }
+        wait(for: [expectation], timeout: 10.0)
+        XCTAssertNotNil(character)
     }
 
 }

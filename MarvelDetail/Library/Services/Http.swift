@@ -45,6 +45,10 @@ final class Endpoint<Response> {
         self.parameters = parameters
         self.decode = decode
     }
+
+    func localizedDescription() -> String {
+        return "\(method) \(path) \(String(describing: parameters))"
+    }
 }
 
 // MARK: - Http Request

@@ -11,7 +11,7 @@ import Alamofire
 extension Http {
 class Client {
     private let manager: Alamofire.SessionManager
-    private let baseURL = URL(string: Configuration.serverURL)!  // swiftlint:disable:this force_unwrapping
+    private let baseURL = URL(string: Configuration.serverURL)!.appendingPathComponent(Configuration.basePath)  // swiftlint:disable:this line_length
     private let queue = DispatchQueue(label: "AlamofireLabel")
 
     init(accessToken: String) {
@@ -28,9 +28,11 @@ class Client {
 
     func request<Response>(_ endpoint: Http.Endpoint<Response>,
                            completion: @escaping (Result<Response>) -> Void) {
-        let request = self.manager.request(self.url(path: endpoint.path),
+        let url = self.url(path: endpoint.path)
+        let request = self.manager.request(url,
                                            method: translate(method: endpoint.method),
                                            parameters: endpoint.parameters)
+        print("Request: \(url) \(String(describing: endpoint.localizedDescription()))")
         request
             .validate()
             .responseData(queue: self.queue) { response in
