@@ -9,23 +9,48 @@ import UIKit
 
 class MarvelCharacterTableVC: UITableViewController {
 
+    private var activityIndicator = UIActivityIndicatorView()
+
     private var service = MarvelService()
     private var data: [Marvel.CharacterDto] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureActivity()
+        loadData()
+    }
+
+    private func loadData() {
+        startActivity()
         service.listCharacters { result in
-            switch result {
-            case let .success(characters):
-                self.data = characters
-                DispatchQueue.main.async {
+            DispatchQueue.main.async {
+                self.stopActivity()
+                switch result {
+                case let .success(characters):
+                    self.data = characters
                     self.tableView.reloadData()
+                case let .failure(error):
+                    self.showAlert(error.localizedDescription)
+                    print("\(error.localizedDescription)")
                 }
-            case let .failure(error):
-                // TODO: show an error alert
-                print("\(error.localizedDescription)")
             }
         }
+    }
+
+    private func configureActivity() {
+        self.view.addSubview(activityIndicator)
+        activityIndicator.stopAnimating()
+        activityIndicator.style = .large
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.center = self.view.convert(self.view.center, from: self.view.superview)
+    }
+
+    private func startActivity() {
+        activityIndicator.startAnimating()
+    }
+
+    private func stopActivity() {
+        activityIndicator.stopAnimating()
     }
 
     // MARK: - Table view data source
@@ -52,52 +77,19 @@ class MarvelCharacterTableVC: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: MarvelCharacterDetailVC.segueId, sender: self)
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView,
-                            commit editingStyle: UITableViewCell.EditingStyle,
-                            forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a
-            //  new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == MarvelCharacterDetailVC.segueId {
+            guard let indexPath = tableView.indexPathForSelectedRow,
+                  let character = data.item(at: indexPath.row),
+                  let detailController = segue.destination as? MarvelCharacterDetailVC else {
+                fatalError("Invalid index data for selected cell")
+            }
+            detailController.character = character
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
-    */
-
 }

@@ -35,5 +35,16 @@ struct CharacterDto: Decodable {
     let name: String?
     let description: String?
     let thumbnail: ImageDto?
+    let urls: [UrlDto]?
+
+    func detailURL() -> String {
+        return urls?.first { $0.type == "detail" }?.url ?? "http://www.marvel.com"
+    }
+}
+
+struct UrlDto: Decodable {
+    let type: String?
+    let url: String?
+
 }
 }

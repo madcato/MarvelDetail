@@ -49,7 +49,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Marvel" id="tQY-vF-XGn"/>
                     <connections>
-                        <segue destination="Gfa-Au-yMq" kind="show" identifier="detail_segue" id="uOQ-KN-MlA"/>
+                        <segue destination="Gfa-Au-yMq" kind="show" identifier="detail" id="uOQ-KN-MlA"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydO-A3-n39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -63,14 +63,33 @@
                     <view key="view" contentMode="scaleToFill" id="2m9-Nm-Gfe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0EC-4f-SUM">
+                                <rect key="frame" x="0.0" y="92" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="5Cw-8i-dkp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0EC-4f-SUM" firstAttribute="top" secondItem="5Cw-8i-dkp" secondAttribute="top" constant="4" id="Ktn-Ic-cog"/>
+                            <constraint firstItem="0EC-4f-SUM" firstAttribute="bottom" secondItem="5Cw-8i-dkp" secondAttribute="bottom" constant="4" id="VnV-9e-K0h"/>
+                            <constraint firstItem="0EC-4f-SUM" firstAttribute="leading" secondItem="5Cw-8i-dkp" secondAttribute="leading" id="ZIP-7d-9nu"/>
+                            <constraint firstItem="0EC-4f-SUM" firstAttribute="trailing" secondItem="5Cw-8i-dkp" secondAttribute="trailing" id="iji-Hk-5KX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="i28-BR-d74"/>
+                    <connections>
+                        <outlet property="webView" destination="0EC-4f-SUM" id="gLf-AJ-FPZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTm-h3-bwt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1319" y="-31"/>
+            <point key="canvasLocation" x="1318.840579710145" y="-31.473214285714285"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tvw-GB-3nO">

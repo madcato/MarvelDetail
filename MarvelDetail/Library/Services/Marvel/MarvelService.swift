@@ -7,7 +7,7 @@
 
 import Alamofire
 
-struct MarlaServiceError: Error {
+struct MarvelServiceError: Error {
     var id: Int
     var description: String
 }
@@ -20,14 +20,14 @@ class MarvelService: NetworkingInjected {
             switch result {
             case let .success(response):
                 guard let array = response.data?.results else {
-                    onFinish(Result.failure(MarlaServiceError(id: 0,
+                    onFinish(Result.failure(MarvelServiceError(id: 0,
                                                               description:
                     "Invalid response from Marvel API: list characters")))
                     return
                 }
                 onFinish(Result.success(array))
             case let .error(id, description):
-                onFinish(Result.failure(MarlaServiceError(id: id, description: description)))
+                onFinish(Result.failure(MarvelServiceError(id: id, description: description)))
             }
         }
     }
@@ -37,14 +37,14 @@ class MarvelService: NetworkingInjected {
             switch result {
             case let .success(response):
                 guard let dto = response.data?.results?[0] else {
-                    onFinish(Result.failure(MarlaServiceError(id: 0,
+                    onFinish(Result.failure(MarvelServiceError(id: 0,
                                                               description:
                     "Invalid response from Marvel API: character datail")))
                     return
                 }
                 onFinish(Result.success(dto))
             case let .error(id, description):
-                onFinish(Result.failure(MarlaServiceError(id: id, description: description)))
+                onFinish(Result.failure(MarvelServiceError(id: id, description: description)))
             }
         }
     }
