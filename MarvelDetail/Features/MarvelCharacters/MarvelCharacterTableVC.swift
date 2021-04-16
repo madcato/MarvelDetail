@@ -9,14 +9,14 @@ import UIKit
 
 class MarvelCharacterTableVC: UITableViewController {
 
-    private var activityIndicator = UIActivityIndicatorView()
+    internal var activityIndicator = UIActivityIndicatorView()
 
     private var service = MarvelService()
     private var data: [Marvel.CharacterDto] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureActivity()
+        configureActivityInCenter(of: view)
         loadData()
     }
 
@@ -35,22 +35,6 @@ class MarvelCharacterTableVC: UITableViewController {
                 }
             }
         }
-    }
-
-    private func configureActivity() {
-        self.view.addSubview(activityIndicator)
-        activityIndicator.stopAnimating()
-        activityIndicator.style = .large
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.center = self.view.convert(self.view.center, from: self.view.superview)
-    }
-
-    private func startActivity() {
-        activityIndicator.startAnimating()
-    }
-
-    private func stopActivity() {
-        activityIndicator.stopAnimating()
     }
 
     // MARK: - Table view data source
@@ -92,4 +76,9 @@ class MarvelCharacterTableVC: UITableViewController {
             tableView.deselectRow(at: indexPath, animated: true)
         }
     }
+}
+
+// MARK: - Activity indicator
+
+extension MarvelCharacterTableVC: ActivityProtocol {
 }

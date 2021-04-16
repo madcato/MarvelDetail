@@ -35,6 +35,7 @@
 		0BDE6F0426284367003076E9 /* String+md5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6EFA2628410F003076E9 /* String+md5.swift */; };
 		0BDE6F1326286A9B003076E9 /* Array+item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6F1226286A9B003076E9 /* Array+item.swift */; };
 		0BDE6F1B262873D6003076E9 /* UIViewController+showAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6F1A262873D6003076E9 /* UIViewController+showAlert.swift */; };
+		0BDE6F232629622D003076E9 /* ActivityProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDE6F222629622D003076E9 /* ActivityProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		0BDE6EFF26284322003076E9 /* SecurityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTests.swift; sourceTree = "<group>"; };
 		0BDE6F1226286A9B003076E9 /* Array+item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+item.swift"; sourceTree = "<group>"; };
 		0BDE6F1A262873D6003076E9 /* UIViewController+showAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+showAlert.swift"; sourceTree = "<group>"; };
+		0BDE6F222629622D003076E9 /* ActivityProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				0BDE6F1226286A9B003076E9 /* Array+item.swift */,
 				0BDE6EFA2628410F003076E9 /* String+md5.swift */,
 				0BDE6F1A262873D6003076E9 /* UIViewController+showAlert.swift */,
+				0BDE6F222629622D003076E9 /* ActivityProtocol.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 				0BDE6E542626C810003076E9 /* AppDelegate.swift in Sources */,
 				0BDE6EB8262738D8003076E9 /* MarvelService.swift in Sources */,
 				0BDE6ED026274071003076E9 /* MarvelAPI.swift in Sources */,
+				0BDE6F232629622D003076E9 /* ActivityProtocol.swift in Sources */,
 				0BDE6E562626C810003076E9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
