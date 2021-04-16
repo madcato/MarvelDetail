@@ -10,6 +10,17 @@ This is an iOS app that show a MArcel characters list, and allows to see the det
 - Show list of characters.
 - Navigate to a character detail.
 
+### Next steps
+
+These are some functionality to add to this project:
+
+- Save the Marvel private key in a secure place, like macOS Keychain.
+- Create an infinite scroll
+- Add different graphic themes.
+- Show a view to indicate user that this app requires internet connetion. Show it only when there is no connection.
+- Add UI tests.
+
+
 ## HowTo install
 
 ### Requirements
